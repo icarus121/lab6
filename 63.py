@@ -45,7 +45,7 @@ def process_start(s_sock):
             print(type(input))
 
         else:
-            s_sock.send(str.encode('Not found'))
+            input = "Not found"
 
         s_sock.send(str.encode("Result:" + input))
         #s_sock.sendall(str.encode(ok_message))
@@ -54,7 +54,7 @@ def process_start(s_sock):
 
 if __name__ == '__main__':
     s = socket.socket()
-    s.bind(('',8081))
+    s.bind(('',8080))
     print("listening...")
     s.listen(5)
     try:
